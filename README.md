@@ -1,6 +1,6 @@
 # periskop-python
 
-[![Build Status](https://api.cirrus-ci.com/github/soundcloud/periskop-python.svg)](https://cirrus-ci.com/github/soundcloud/periskop-go)
+[![Build Status](https://api.cirrus-ci.com/github/soundcloud/periskop-python.svg)](https://cirrus-ci.com/github/soundcloud/periskop-python)
 
 [Periskop](https://github.com/soundcloud/periskop) requires collecting and aggregating exceptions on the client side,
 as well as exposing them via an HTTP endpoint using a well defined format.
