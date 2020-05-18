@@ -1,6 +1,6 @@
 import pytest
 
-from periskop.models import ExceptionWithContext, ExceptionInstance, AggregatedException, MAX_ERRORS
+from periskop_client.models import ExceptionWithContext, ExceptionInstance, AggregatedException, MAX_ERRORS
 
 
 def _mock_exception_with_context(stacktrace):
