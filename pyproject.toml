@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "periskop"
+name = "periskop-client"
 version = "0.1.0"
 description = "Periskop Python client"
 authors = ["Marc Tuduri <marc.tuduri@soundcloud.com>"]

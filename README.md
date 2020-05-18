@@ -10,7 +10,7 @@ This library provides low level collection and rendering capabilities
 ## Install
 
 ```
-pip install periskop
+pip install periskop-client
 ```
 
 ## Usage example
@@ -19,10 +19,10 @@ pip install periskop
 import json
 from http.server import HTTPServer
 
-from periskop.collector import ExceptionCollector
-from periskop.exporter import ExceptionExporter
-from periskop.handler import exception_http_handler
-from periskop.models import HTTPContext
+from periskop_client.collector import ExceptionCollector
+from periskop_client.exporter import ExceptionExporter
+from periskop_client.handler import exception_http_handler
+from periskop_client.models import HTTPContext
 
 
 def faulty_json():
