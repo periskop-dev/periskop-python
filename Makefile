@@ -6,6 +6,6 @@ test:
 	pytest
 
 auto-format:
-	black periskop
+	black periskop_client
 
 .PHONY: clean test auto-format
