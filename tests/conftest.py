@@ -1,8 +1,8 @@
 import pytest
 
-from periskop.collector import ExceptionCollector
-from periskop.exporter import ExceptionExporter
-from periskop.models import HTTPContext
+from periskop_client.collector import ExceptionCollector
+from periskop_client.exporter import ExceptionExporter
+from periskop_client.models import HTTPContext
 
 
 @pytest.fixture
