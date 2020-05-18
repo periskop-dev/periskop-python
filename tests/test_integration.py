@@ -3,8 +3,8 @@ import requests
 from http.server import HTTPServer
 
 
-from periskop.handler import exception_http_handler
-from periskop.models import HTTPContext
+from periskop_client.handler import exception_http_handler
+from periskop_client.models import HTTPContext
 
 
 def err_func():
