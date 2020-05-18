@@ -1,3 +1,4 @@
+# tox setup
 task_template: &TASK_TEMPLATE
   tox_install_script:
     - python -m pip install --upgrade pip
