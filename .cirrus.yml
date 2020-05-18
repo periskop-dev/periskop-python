@@ -2,14 +2,14 @@
 task_template: &TASK_TEMPLATE
   tox_install_script:
     - python -m pip install --upgrade pip
-    - python -m pip install --user pipx
-    - pipx install tox
+    - pip install tox
 
 default_python_container: &DEFAULT_PYTHON_CONTAINER
   container:
     image: python:3.7-slim
     
 test_task:
+  << : *TASK_TEMPLATE
   matrix:
     - name: test python 3.8
       container: {image: "python:3.8-slim"}
@@ -20,7 +20,6 @@ test_task:
     - name: test python 3.6
       container: {image: "python:3.6-slim"}
       test_script: tox -e py36
-  << : *TASK_TEMPLATE
 
 lint_task:
   << : *DEFAULT_PYTHON_CONTAINER
