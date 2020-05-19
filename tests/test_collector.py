@@ -7,7 +7,6 @@ def test_add_exception(collector):
     assert len(collector._aggregated_exceptions) == 1
     collector._add_exception(exception, None)
     assert list(collector._aggregated_exceptions.values())[0].total_count == 2
-    print(collector._aggregated_exceptions.values())
 
 
 def test_report(collector):
