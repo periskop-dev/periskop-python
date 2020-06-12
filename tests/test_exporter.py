@@ -28,7 +28,8 @@ def test_export(collector, exporter, sample_http_context):
             "request_url": "http://example.com",
             "request_headers": {
               "Cache-Control": "no-cache"
-            }
+            },
+            "request_body": null
           }
         }
       ]

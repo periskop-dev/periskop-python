@@ -36,10 +36,15 @@ if __name__ == "__main__":
     except Exception as exception:
         # Report without context
         collector.report(exception)
-        # Report with HTTP context
+        # Report with HTTP context without request body
         collector.report_with_context(
             exception,
             HTTPContext("GET", "http://example.com", {"Cache-Control": "no-cache"}),
+        )
+        # Report with HTTP context with request body
+        collector.report_with_context(
+            exception,
+            HTTPContext("GET", "http://example.com", {"Cache-Control": "no-cache"}, "request_body"),
         )
 
     # Expose collected exceptions in localhost:8081/-/exceptions
