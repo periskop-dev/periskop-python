@@ -20,11 +20,13 @@ def sample_http_context():
     return HTTPContext(request_method="GET", request_url="http://example.com",
                        request_headers={"Cache-Control": "no-cache"})
 
+
 @pytest.fixture
 def sample_http_context_with_request_body():
     return HTTPContext(request_method="GET", request_url="http://example.com",
                        request_headers={"Cache-Control": "no-cache"},
                        request_body="some body")
+
 
 def get_exception_with_context(collector):
     return list(collector._aggregated_exceptions.values())[0].latest_errors[0]
