@@ -30,6 +30,7 @@ class HTTPContext:
     request_method: str
     request_url: str
     request_headers: Optional[Dict[str, str]] = None
+    request_body: Optional[str] = None
 
 
 @dataclass_json
