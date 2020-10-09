@@ -12,6 +12,7 @@ def test_export(collector, exporter, sample_http_context):
       "aggregation_key": "Exception@a9a59d26",
       "total_count": 1,
       "severity": "error",
+      "timestamp": "2019-10-11T12:47:25.595Z",
       "latest_errors": [
         {
           "error": {
