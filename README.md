@@ -1,5 +1,6 @@
 # periskop-python
-[![PyPI pyversions](https://img.shields.io/pypi/pyversions/periskop-client.svg)](https://pypi.python.org/pypi/periskop-client/) [![Build Status](https://api.cirrus-ci.com/github/soundcloud/periskop-python.svg)](https://cirrus-ci.com/github/soundcloud/periskop-python)
+[![pypi](https://img.shields.io/pypi/v/periskop-client.svg)](https://pypi.python.org/pypi/periskop-client/) [![PyPI pyversions](https://img.shields.io/pypi/pyversions/periskop-client.svg)](https://pypi.python.org/pypi/periskop-client/) [![Build Status](https://api.cirrus-ci.com/github/soundcloud/periskop-python.svg)](https://cirrus-ci.com/github/soundcloud/periskop-python)
+
 
 [Periskop](https://github.com/soundcloud/periskop) requires collecting and aggregating exceptions on the client side,
 as well as exposing them via an HTTP endpoint using a well defined format.
@@ -35,10 +36,15 @@ if __name__ == "__main__":
     except Exception as exception:
         # Report without context
         collector.report(exception)
-        # Report with HTTP context
+        # Report with HTTP context without request body
         collector.report_with_context(
             exception,
             HTTPContext("GET", "http://example.com", {"Cache-Control": "no-cache"}),
+        )
+        # Report with HTTP context with request body
+        collector.report_with_context(
+            exception,
+            HTTPContext("GET", "http://example.com", {"Cache-Control": "no-cache"}, "request_body"),
         )
 
     # Expose collected exceptions in localhost:8081/-/exceptions

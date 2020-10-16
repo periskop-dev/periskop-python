@@ -7,7 +7,6 @@ def test_add_exception(collector):
     assert len(collector._aggregated_exceptions) == 1
     collector._add_exception(exception, None)
     assert list(collector._aggregated_exceptions.values())[0].total_count == 2
-    print(collector._aggregated_exceptions.values())
 
 
 def test_report(collector):
@@ -24,6 +23,14 @@ def test_report_with_context(collector, sample_http_context):
     assert len(collector._aggregated_exceptions) == 1
     exception_with_context = get_exception_with_context(collector)
     assert exception_with_context.http_context.request_method == "GET"
+
+
+def test_report_with_context_with_request_body(collector, sample_http_context_with_request_body):
+    collector.report_with_context(Exception("error"), sample_http_context_with_request_body)
+    assert len(collector._aggregated_exceptions) == 1
+    exception_with_context = get_exception_with_context(collector)
+    assert exception_with_context.http_context.request_method == "GET"
+    assert exception_with_context.http_context.request_body == "some body"
 
 
 def test_get_aggregated_exceptions(collector):
