@@ -70,10 +70,10 @@ class AggregatedException:
     latest_errors: List[ExceptionWithContext]
     total_count: int = 0
     severity: str = SEVERITY_ERROR
-    timestamp: str = ""
+    created_at: str = ""
 
     def __post_init__(self):
-        self.timestamp = datetime.utcnow().isoformat(timespec="milliseconds") + "Z"
+        self.created_at = datetime.utcnow().isoformat(timespec="milliseconds") + "Z"
 
     def add_exception(self, exception_with_context: ExceptionWithContext):
         """
