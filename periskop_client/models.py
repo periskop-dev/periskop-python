@@ -91,3 +91,5 @@ class AggregatedException:
 @dataclass
 class Payload:
     aggregated_errors: List[AggregatedException]
+    target_uuid: str
+
