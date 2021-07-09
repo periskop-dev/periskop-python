@@ -39,7 +39,10 @@ class ExceptionCollector:
 
         :return Payload: list of aggregated exceptions
         """
-        return Payload(aggregated_errors=list(self._aggregated_exceptions.values()), target_uuid=self._uuid)
+        return Payload(
+            aggregated_errors=list(self._aggregated_exceptions.values()),
+            target_uuid=self._uuid,
+        )
 
     def _add_exception(self, exception: Exception, http_context: HTTPContext = None):
         stacktrace = traceback.format_exc().strip().split("\n")

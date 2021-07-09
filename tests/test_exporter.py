@@ -7,7 +7,7 @@ from freezegun import freeze_time
 def test_export(collector, exporter, sample_http_context):
     expected = """
 {
-	"target_uuid": "5d9893c6-51d6-11ea-8aad-f894c260afe5",
+  "target_uuid": "5d9893c6-51d6-11ea-8aad-f894c260afe5",
   "aggregated_errors": [
     {
       "aggregation_key": "Exception@a9a59d26",
