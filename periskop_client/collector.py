@@ -1,4 +1,5 @@
 import traceback
+import uuid
 from typing import Dict
 
 from .models import (
@@ -13,6 +14,7 @@ from .models import (
 class ExceptionCollector:
     def __init__(self):
         self._aggregated_exceptions: Dict[str, AggregatedException] = {}
+        self._uuid = str(uuid.uuid1())
 
     def report(self, exception: Exception):
         """
@@ -37,7 +39,10 @@ class ExceptionCollector:
 
         :return Payload: list of aggregated exceptions
         """
-        return Payload(aggregated_errors=list(self._aggregated_exceptions.values()))
+        return Payload(
+            aggregated_errors=list(self._aggregated_exceptions.values()),
+            target_uuid=self._uuid,
+        )
 
     def _add_exception(self, exception: Exception, http_context: HTTPContext = None):
         stacktrace = traceback.format_exc().strip().split("\n")
