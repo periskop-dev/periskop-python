@@ -15,4 +15,4 @@ class ExceptionExporter:
         return self._collector.get_aggregated_exceptions().to_json()  # type: ignore
 
     def push_to_gateway(self, addr: str):
-      requests.post(addr + "/errors", self.export())
+        requests.post(addr + "/errors", self.export())
