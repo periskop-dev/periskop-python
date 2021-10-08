@@ -56,6 +56,18 @@ if __name__ == "__main__":
     http_server.serve_forever()
 ```
 
+### Using push gateway
+
+You can also use [pushgateway](https://github.com/soundcloud/periskop-pushgateway) in case you want to push your metrics 
+instead of using pull method. Use only in case you really need it (e.g a batch job) as it would degrade the performance 
+of your application. In the following example, we assume that we deployed an instance of periskop-pushgateway 
+on `http://localhost:6767`:
+
+```scala
+exporter = ExceptionExporter(collector)
+exporter.push_to_gateway("http://localhost:6767")
+```
+
 ## Run tests
 
 For running tests [pytest](https://docs.pytest.org) is needed. A recommended way to run all check is installing [tox](https://tox.readthedocs.io/en/latest/install.html) and then just type `tox`. This will run `pytest` tests, [black](https://black.readthedocs.io) formatter and [flake8](https://flake8.pycqa.org) and [mypy](http://mypy-lang.org/) static code analyzers.
