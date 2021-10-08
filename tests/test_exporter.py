@@ -42,5 +42,4 @@ def test_export(collector, exporter, sample_http_context):
         collector.report_with_context(exception=Exception("test"), http_context=sample_http_context)
         collector._uuid = "5d9893c6-51d6-11ea-8aad-f894c260afe5"
         exported = exporter.export()
-        exporter.push_to_gateway("http://localhost:7878")
         assert json.loads(exported) == json.loads(expected)
