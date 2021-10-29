@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "periskop-client"
-version = "0.1.0"
+version = "0.2.0"
 description = "Periskop Python client"
 authors = ["Marc Tuduri <marc.tuduri@soundcloud.com>"]
 license = "Apache-2.0"
