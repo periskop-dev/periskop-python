@@ -1,3 +1,4 @@
+import requests
 from .collector import ExceptionCollector
 
 
@@ -12,3 +13,6 @@ class ExceptionExporter:
         :return: str
         """
         return self._collector.get_aggregated_exceptions().to_json()  # type: ignore
+
+    def push_to_gateway(self, addr: str):
+        requests.post(addr + "/errors", self.export())
