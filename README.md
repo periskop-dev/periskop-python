@@ -1,8 +1,8 @@
 # periskop-python
-[![pypi](https://img.shields.io/pypi/v/periskop-client.svg)](https://pypi.python.org/pypi/periskop-client/) [![PyPI pyversions](https://img.shields.io/pypi/pyversions/periskop-client.svg)](https://pypi.python.org/pypi/periskop-client/) [![Build Status](https://api.cirrus-ci.com/github/soundcloud/periskop-python.svg)](https://cirrus-ci.com/github/soundcloud/periskop-python)
+[![pypi](https://img.shields.io/pypi/v/periskop-client.svg)](https://pypi.python.org/pypi/periskop-client/) [![PyPI pyversions](https://img.shields.io/pypi/pyversions/periskop-client.svg)](https://pypi.python.org/pypi/periskop-client/) [![Build Status](https://api.cirrus-ci.com/github/periskop-dev/periskop-python.svg)](https://cirrus-ci.com/github/periskop-dev/periskop-python)
 
 
-[Periskop](https://github.com/soundcloud/periskop) requires collecting and aggregating exceptions on the client side,
+[Periskop](https://github.com/periskop-dev/periskop) requires collecting and aggregating exceptions on the client side,
 as well as exposing them via an HTTP endpoint using a well defined format.
 
 This library provides low level collection and rendering capabilities
@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
 ### Using push gateway
 
-You can also use [pushgateway](https://github.com/soundcloud/periskop-pushgateway) in case you want to push your metrics 
+You can also use [pushgateway](https://github.com/periskop-dev/periskop-pushgateway) in case you want to push your metrics 
 instead of using pull method. Use only in case you really need it (e.g a batch job) as it would degrade the performance 
 of your application. In the following example, we assume that we deployed an instance of periskop-pushgateway 
 on `http://localhost:6767`:

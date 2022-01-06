@@ -2,7 +2,7 @@
 name = "periskop-client"
 version = "0.2.0"
 description = "Periskop Python client"
-authors = ["Marc Tuduri <marc.tuduri@soundcloud.com>"]
+authors = ["Marc Tuduri <marctc@protonmail.com>"]
 license = "Apache-2.0"
 readme = "README.md"
 classifiers=[
